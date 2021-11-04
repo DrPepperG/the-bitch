@@ -1,0 +1,4 @@
+/node_modules
+pets.json
+config.json
+*.sqlite

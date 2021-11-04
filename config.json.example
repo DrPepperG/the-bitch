@@ -1,0 +1,18 @@
+{
+    "dev": false,
+    "token": "",
+    "deploy": {
+        "clientId": "",
+        "guildId": ""
+    },
+    "response_reaction": "🍉",
+    "disabled_cat": {},
+    "games": {
+        "counting": {
+            "channel": ""
+        },
+        "main": {
+            "channel": ""
+        }
+    }
+}
