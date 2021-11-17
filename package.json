@@ -1,15 +1,11 @@
 {
-  "name": "fire-truck",
+  "name": "the-bitch",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
     "discord.js": "^13.0.1",
-    "glob": "^7.1.7",
-    "mathjs": "^9.2.0",
-    "node-cron": "^3.0.0",
-    "sequelize": "^6.6.5",
-    "sqlite3": "^5.0.2"
+    "glob": "^7.1.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,11 +16,6 @@
     "type": "git",
     "url": "git+https://github.com/Predator-Network/Predator-Gilby.git"
   },
-  "keywords": [
-    "gilby",
-    "predator",
-    "network"
-  ],
   "bugs": {
     "url": "https://github.com/Predator-Network/Predator-Gilby/issues"
   },

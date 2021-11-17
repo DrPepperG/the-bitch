@@ -5,11 +5,8 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 client.commandPrefix = 'ft';
 client.commands = new Collection();
 client.util = new Collection();
-client.games = new Collection();
 // Prototypes
 require('./prototypes');
-// Database
-db = require('./database/handle')
 // Loader
 const loader = [
     {
@@ -21,12 +18,6 @@ const loader = [
         name: 'utility',
         collection: 'util',
         dir: './util/**/*.js',
-    },
-    {
-        name: 'game',
-        collection: 'games',
-        dir: './games/*.js',
-        class: true,
     }
 ]
 // Vars

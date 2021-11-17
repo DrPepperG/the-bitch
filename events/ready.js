@@ -7,12 +7,5 @@ module.exports = {
         // Run any ready utilities
         client.util.filter((util) => util.event === 'client')
             .each(util => util.execute(client))
-        // Find our exclusive games
-        client._exclusiveGames = []
-        client.games.forEach((e) => {
-            if (e.channel && e.channel.exclusive) {
-                client._exclusiveGames[e.channel.id] = e;
-            }
-        })
     },
 }

@@ -1,7 +1,5 @@
 const topics = [
-    'with a monster truck',
-    'with Wilson',
-    'on The Ball Pit :)'
+    'in RENO',
 ];
 
 module.exports = {
