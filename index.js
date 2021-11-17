@@ -5,6 +5,10 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 client.commandPrefix = 'ft';
 client.commands = new Collection();
 client.util = new Collection();
+// If TOKEN doesn't exist then we know we're running locally
+if (!process.env.TOKEN) {
+    require('dotenv').config();
+}
 // Prototypes
 require('./prototypes');
 // Loader
