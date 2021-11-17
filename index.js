@@ -22,7 +22,6 @@ const loader = [
 ]
 // Vars
 const { glob } = require('glob');
-const { token } = require('./config.json');
 // Events
 glob('./events/**/*.js', (err, files) => {
     if (err) return console.error(err);
@@ -70,4 +69,4 @@ loader.forEach((entry) => {
     })
 });
 
-client.login(token);
+client.login(process.env.TOKEN);

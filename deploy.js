@@ -1,10 +1,9 @@
 const { Collection } = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { token, dev, deploy } = require('./config.json');
 const { glob } = require('glob');
 
-const rest = new REST({ version: '9' }).setToken(token);
+const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 
 const commands = new Collection();
 function loadCommands() {
@@ -47,16 +46,16 @@ function loadCommands() {
     await loadCommands();
     try {
         console.log('Started refreshing application (/) commands.');
-        if (dev) {
+        if (process.env.dev) {
             await rest.put(
-                Routes.applicationGuildCommands(deploy.clientId, deploy.guildId),
+                Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
                 {
                     body: commands.map(({ execute, ...data }) => data)
                 },
             );
         } else {
             await rest.put(
-                Routes.applicationCommands(deploy.clientId),
+                Routes.applicationCommands(process.env.CLIENT_ID),
                 {
                     body: commands.map(({ execute, ...data }) => data)
                 },
