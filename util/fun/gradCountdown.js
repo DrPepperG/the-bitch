@@ -2,8 +2,11 @@ module.exports = {
     name: 'gradCountdown',
     event: 'ready',
     async execute(client) {
-        const guild = await client.guilds.fetch('466339091017891840')
+        const guild = await client.guilds.fetch(process.env.GUILD_ID)
         const channel = guild.channels.cache.find(c => c.name === 'grad-countdown')
+
+        if (!channel) return console.warn(`\x1b[31mGrad channel not found\x1b[0m`)
+
         let pinned = await channel.messages.fetchPinned()
             .then(messages => messages.last())
 

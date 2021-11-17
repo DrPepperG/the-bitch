@@ -6,7 +6,7 @@ module.exports = {
         const seconds = gradDate.getTime() - Date.now()
         const dhms = seconds.toDhms()
 
-        interaction.reply({
+        return interaction.reply({
             embeds: [{
                 color: 0x0674f9,
                 title: 'Daddy Grad Countdown!',
