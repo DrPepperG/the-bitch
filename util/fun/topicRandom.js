@@ -1,5 +1,12 @@
 const topics = [
-    'in RENO',
+    {
+        type: 'PLAYING',
+        message: 'in RENO'
+    },
+    {
+        type: 'WATCHING',
+        message: 'the sale on tropickles'
+    }
 ];
 
 module.exports = {
@@ -7,9 +14,16 @@ module.exports = {
     event: 'ready',
     async execute(client) {
         // Set our activity on start
-        client.user.setActivity(topics[Math.floor(topics.length * Math.random())]);
-        setInterval(() => {
-            client.user.setActivity(topics[Math.floor(topics.length * Math.random())]);
-        }, 60000);
+        setActivity(client);
+        // Create our interval
+        setInterval(setActivity, 60000, client);
     },
+}
+
+function setActivity(client) {
+    const topic = topics[Math.floor(topics.length * Math.random())];
+
+    client.user.setActivity(topic.message, {
+        type: topic.type
+    });
 }
